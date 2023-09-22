@@ -27,3 +27,6 @@ body {
     transform-origin: 50% 50%;
     transition: transform 2s ease-out;
 }
+text {
+    fill: #000;
+}
