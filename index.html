@@ -8,17 +8,23 @@
 </head>
 <body>
     <div class="container">
-        <h1>룰렛 게임</h1>
-        <label for="max-number">최대 숫자: </label>
-        <input type="number" id="max-number" min="1" value="10">
-        <button onclick="spinRoulette()">룰렛 돌리기</button>
-        <div class="roulette">
-            <svg viewBox="0 0 200 200" id="roulette-svg">
-                <g id="sectors"></g>
-                <g id="numbers"></g>
-                <line x1="100" y1="10" x2="100" y2="0" stroke="red" stroke-width="4"></line>
+        <h1 class="main-title">UMPC 라이프 나눔 당첨자 뽑기</h1>
+        <div class="controls">
+            <label for="max-number">총 신청 인원:</label>
+            <input type="number" id="max-number" value="10" min="1">
+            <label for="draw-count">뽑을 인원:</label>
+            <select id="draw-count"></select>
+            <label for="exclude-values">제외할 값:</label>
+            <input type="text" id="exclude-values" placeholder="예: 2,5,8">
+            <button onclick="showLoadingAndResult()">뽑기 시작</button>
+        </div>
+        <div class="loading-animation">
+            <svg viewBox="0 0 50 50" id="loading-svg">
+                <circle cx="25" cy="25" r="20" stroke="green" stroke-width="5" fill="none" />
+                <path d="M 25,5 A 20,20 0 0,1 25,45" stroke="red" stroke-width="5" fill="none" />
             </svg>
-        </div>        
+        </div>       
+        
         <h2 id="result"></h2>
     </div>
     <script src="./resources/script.js"></script>
